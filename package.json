@@ -1,0 +1,20 @@
+{
+  "name": "suellyngomes_desafio_cypress",
+  "version": "1.0.0",
+  "description": "Cypress E2E automation challenge using BDD (Cucumber) and Page Object Model for Coffee Cart.",
+  "license": "ISC",
+  "author": "Suellyn Gomes",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "cypress-cucumber-preprocessor":{
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/support/step_definitions/"
+  },
+  "devDependencies": {
+    "cypress": "^15.9.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}
