@@ -5,6 +5,7 @@ const CART_ITEM = "div:not(.pay-container) > ul > .list-item";
 const SUBMIT_BUTTON = "#submit-payment";
 const PAYMENT_DETAILS_MODAL = ".modal > div";
 const CHECKOUT_BUTTON = '[data-test="checkout"]';
+const COFFEE_PRICE = '.unit-desc'
 
 const EXPECTED_TOTAL_ALIAS = "expectedTotal"
 const EXPECTED_COFFES_ALIAS = "expectedCoffees"
@@ -15,8 +16,8 @@ class Cart {
       let total = 0;
 
       coffees.forEach(([name, price]) => {
-        cy.contains(CART_ITEM, name).should("exist");
-        cy.contains(CART_ITEM, name).contains(`$${price}.00`).should("exist");
+        cy.get(CART_ITEM).find('div').should('contain.text', name);
+        cy.get(CART_ITEM).find('div').should('contain.text', name).find(COFFEE_PRICE).should('contain.text', `$${price}.00`);
         total += price;
       });
 

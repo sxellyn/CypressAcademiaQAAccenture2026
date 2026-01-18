@@ -15,8 +15,7 @@ class Catalog {
 
   addCoffeeToCart(name) {
     cy.get(
-      COFFEE_SELECTOR.replace("coffee_type", name.replace(" ", "_")),
-    ).click();
+      COFFEE_SELECTOR.replace("coffee_type", name.replace(" ", "_"))).click();
   }
 
   addDifferentCoffeesToCart(amountOfCoffees) {
